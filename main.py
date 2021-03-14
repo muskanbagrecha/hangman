@@ -1,7 +1,7 @@
 import random
 from word import word_list
 from assets import logo, stages
-from replit import clear
+import os
 print(logo)
 end_of_game = False
 chosen_word = random.choice(word_list)
@@ -17,7 +17,7 @@ is_present=False
 print(f"{' '.join(display)}")
 while not end_of_game:
     guess = input("\nGuess a letter: ").lower()
-    clear()
+    os.system('cls' if os.name == 'nt' else 'clear')
     for position in range(word_length):
         letter = chosen_word[position]
         if letter == guess:
